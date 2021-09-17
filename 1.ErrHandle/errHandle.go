@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func queryDataFromDB(db sql.DB) ( res []string , err error)  {
+func queryDataFromDB(db sql.DB) (res []string, err error) {
 
 	rows, err := db.Query("select id, name from users where id = ?", 1)
 	if errors.Is(err, sql.ErrNoRows) {
@@ -19,7 +19,6 @@ func queryDataFromDB(db sql.DB) ( res []string , err error)  {
 
 	for rows.Next() {
 		//todo
-
 	}
 	return
 }
